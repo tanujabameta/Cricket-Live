@@ -1,17 +1,28 @@
 import React from "react";
 import "./App.css";
 import CricketApp from "./Components/CricketApp/CricketApp";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <h1 className="title">Cricket Live</h1>
-      <BrowserRouter>
-        {/* <Route path="/"> */}
-        <CricketApp />
-        {/* </Route> */}
-      </BrowserRouter>
+      <Router>
+        <Routes>
+          <Route path="upcoming-matches" element={<CricketApp />}>
+            <Route path="international" />
+            <Route path="domestic" />
+          </Route>
+          <Route path="/live-matches" element={<CricketApp />}>
+            <Route path="international" />
+            <Route path="domestic" />
+          </Route>
+          <Route path="/results" element={<CricketApp />}>
+            <Route path="international" />
+            <Route path="domestic" />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

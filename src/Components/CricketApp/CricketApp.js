@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import MatchService from "../../graphql";
 import MatchSeries from "../MatchSeries/MatchSeries";
 import "./CricketApp.css";
+import { NavLink, Outlet } from "react-router-dom";
 
 function CricketApp() {
   const [matchData, setMatchData] = useState([]);
   const [matchStatus, setMatchStatus] = useState("upcoming");
-  const [matchType] = useState("ALL");
+  const [matchType, setMatchType] = useState("ALL");
 
   const loadMatchData = async () => {
     const matchData = await MatchService.getCricketMatches(
@@ -19,51 +20,56 @@ function CricketApp() {
 
   useEffect(() => {
     loadMatchData();
-  }, [matchStatus]);
+  }, [matchStatus, matchType]);
 
   console.log(matchData);
   return (
     <>
       <nav className="matchStatusNav">
-        <a
-          href="/upcoming-matches"
-          onClick={(e) => {
-            e.preventDefault();
-            setMatchStatus("upcoming");
-          }}
-          className="matchStatus"
+        <NavLink
+          to="/upcoming-matches"
+          className={({ isActive }) => (isActive ? "active" : "inactive")}
+          onClick={() => setMatchStatus("upcoming")}
         >
           Upcoming
-        </a>
-        <a
-          href="/live-matches"
-          className="matchStatus"
-          onClick={(e) => {
-            e.preventDefault();
-            setMatchStatus("live");
-          }}
-        >
+        </NavLink>
+        <NavLink to="/live-matches" onClick={() => setMatchStatus("live")}>
           Live
-        </a>
-        <a
-          href="/results"
-          className="matchStatus"
-          onClick={(e) => {
-            e.preventDefault();
-            setMatchStatus("completed");
-          }}
-        >
+        </NavLink>
+        <NavLink to="/results" onClick={() => setMatchStatus("completed")}>
           Results
-        </a>
+        </NavLink>
+        <Outlet />
       </nav>
-      <ul className="matchTypes">
-        <li className="matchType">All</li>
-        <li className="matchType">International</li>
-        <li className="matchType">Domestic</li>
-      </ul>
+
+      <nav className="matchTypes">
+        <NavLink
+          to=""
+          //className={({ isActive }) => (isActive ? "matchType" : "inactive")}
+          className="matchType"
+          onClick={() => setMatchType("ALL")}
+        >
+          All
+        </NavLink>
+        <NavLink
+          to="international"
+          className="matchType"
+          onClick={() => setMatchType("international")}
+        >
+          International
+        </NavLink>
+        <NavLink
+          to="domestic"
+          className="matchType"
+          onClick={() => setMatchType("domestic")}
+        >
+          Domestic
+        </NavLink>
+      </nav>
       {matchData.map((matchData, index) => {
         return <MatchSeries matchData={matchData} key={index} />;
       })}
+      <Outlet />
     </>
   );
 }

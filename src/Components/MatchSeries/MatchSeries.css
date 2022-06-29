@@ -1,3 +1,7 @@
 .matchSeries {
-    @apply bg-lightblack text-white m-3 rounded text-left p-3
+  @apply bg-lightblack text-white m-3 rounded text-left p-3;
+}
+
+.league {
+  @apply bg-red p-1.5 mr-2 rounded;
 }

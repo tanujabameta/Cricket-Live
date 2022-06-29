@@ -1,5 +1,10 @@
 .App {
   text-align: center;
   margin: 0;
+  @apply  dark:bg-black
+}
+
+.title {
+  @apply text-2xl text-white font-sans m-6 mt-3
 }
 

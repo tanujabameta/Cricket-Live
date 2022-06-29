@@ -1,29 +1,24 @@
-import React, { useState } from "react";
-import Match from "../Match/Match";
+import React from "react";
+import MatchCard from "../MatchCard/MatchCard";
+import "./MatchSeries.css";
 
-function MatchSeries() {
-  let [activeMatch, setActiveMatch] = useState(0);
-
-  const prevMatch = () => {
-    setActiveMatch(activeMatch - 1);
-  };
-
-  const nextMatch = () => {
-    setActiveMatch(activeMatch + 1);
-  };
+function MatchSeries({ matchData }) {
   return (
-    <>
-      <div className="bg-lightblack text-white m-3 rounded text-left p-3">
-        <span onClick={prevMatch}> &larr; </span> Match series
-        <span className="float-right" onClick={nextMatch}>
-          &rarr;
-        </span>
+    <div>
+      <div className="matchSeries">
+        {matchData.seriesName}
+        <span className="float-right">&rarr;</span>
       </div>
-      <span className="flex">
-        <Match />
-        <Match />
-      </span>
-    </>
+      <div className="flex overflow-x-scroll">
+        {matchData.matches?.map((match, index) => {
+          return (
+            <span key={index} className="min-w-[80%]">
+              <MatchCard match={match} />
+            </span>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 

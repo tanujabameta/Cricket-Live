@@ -1,0 +1,25 @@
+.matchStatusNav {
+   @apply flex justify-around border-lightblack text-white border-b-2 
+}
+
+.matchStatus {
+   @apply hover:border-b-2 p-3
+}
+
+.matchStatus :active {
+   border-bottom: 2px white solid;
+}
+
+.matchStatus:active {
+   @apply text-blue
+}
+
+.matchTypes {
+   @apply flex justify-center text-white rounded-lg bg-lightblack m-5
+}
+
+.matchType {
+ @apply mr-3 hover:bg-black p-3 rounded-lg
+}
+
+

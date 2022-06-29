@@ -9,7 +9,8 @@ module.exports = {
     colors: {
       black : '#0f172a',
       white: '#f1f5f9',
-      lightblack: '#1e293b'
+      lightblack: '#1e293b',
+      blue:'#0369a1'
     }
   },
   plugins: [],

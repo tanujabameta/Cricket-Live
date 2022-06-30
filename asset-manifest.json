@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Cricket-Live/static/css/main.0d3320b2.css",
-    "main.js": "/Cricket-Live/static/js/main.3954daea.js",
-    "static/js/787.b90784f5.chunk.js": "/Cricket-Live/static/js/787.b90784f5.chunk.js",
-    "index.html": "/Cricket-Live/index.html",
-    "main.0d3320b2.css.map": "/Cricket-Live/static/css/main.0d3320b2.css.map",
-    "main.3954daea.js.map": "/Cricket-Live/static/js/main.3954daea.js.map",
-    "787.b90784f5.chunk.js.map": "/Cricket-Live/static/js/787.b90784f5.chunk.js.map"
+    "main.css": "/cricket-live/static/css/main.0d3320b2.css",
+    "main.js": "/cricket-live/static/js/main.a887fc92.js",
+    "static/js/787.b90784f5.chunk.js": "/cricket-live/static/js/787.b90784f5.chunk.js",
+    "index.html": "/cricket-live/index.html",
+    "main.0d3320b2.css.map": "/cricket-live/static/css/main.0d3320b2.css.map",
+    "main.a887fc92.js.map": "/cricket-live/static/js/main.a887fc92.js.map",
+    "787.b90784f5.chunk.js.map": "/cricket-live/static/js/787.b90784f5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d3320b2.css",
-    "static/js/main.3954daea.js"
+    "static/js/main.a887fc92.js"
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cricket-live/static/css/main.0d3320b2.css",
+    "main.js": "/cricket-live/static/js/main.c687ff5f.js",
+    "static/js/787.b90784f5.chunk.js": "/cricket-live/static/js/787.b90784f5.chunk.js",
+    "index.html": "/cricket-live/index.html",
+    "main.0d3320b2.css.map": "/cricket-live/static/css/main.0d3320b2.css.map",
+    "main.c687ff5f.js.map": "/cricket-live/static/js/main.c687ff5f.js.map",
+    "787.b90784f5.chunk.js.map": "/cricket-live/static/js/787.b90784f5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d3320b2.css",
+    "static/js/main.c687ff5f.js"
+  ]
+}

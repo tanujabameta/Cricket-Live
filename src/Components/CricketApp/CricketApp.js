@@ -36,10 +36,12 @@ function CricketApp() {
 
   useEffect(() => {
     loadMatchDataFilter();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matchStatus, matchType]);
 
   useEffect(() => {
     loadMatchDataPageChange();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNumber]);
 
   const scrollToEnd = () => {

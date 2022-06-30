@@ -1,7 +1,31 @@
 .matchCard {
-    @apply bg-lightblack text-white m-3 rounded text-left p-3 
+  @apply bg-lightblack text-white m-3 rounded text-left p-3;
 }
 
 .matchDate {
-    @apply bg-black rounded p-2 m-3 text-center
+  @apply bg-black rounded p-2 m-3 text-center;
 }
+
+.flag {
+  @apply bg-black p-3 rounded text-center space-x-6;
+}
+
+.matchStatus {
+  @apply uppercase text-xs float-right;
+}
+
+.matchResult {
+  @apply text-center bg-brown rounded-lg p-1;
+}
+
+ .cardProgessBar {
+  @apply w-10 absolute top-0;
+}
+
+.awayTeamProb {
+  @apply text-xs float-right mt-1;
+}
+
+.homeTeamProb {
+  @apply text-xs ml-2;
+} 

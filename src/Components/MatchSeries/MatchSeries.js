@@ -12,11 +12,11 @@ function MatchSeries({ matchData }) {
         {matchData.seriesName}
         <span className="float-right">&rarr;</span>
       </div>
-      <div className="flex overflow-x-scroll">
+      <div className="matchDataCard">
         {matchData.matches.map((match, index) => {
           return (
             <span key={index} className="min-w-[80%]">
-              <MatchCard match={match} />
+              <MatchCard match={match}/>
             </span>
           );
         })}

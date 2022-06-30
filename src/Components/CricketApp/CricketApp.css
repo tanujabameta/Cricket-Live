@@ -2,8 +2,12 @@
   @apply flex justify-around border-lightblack text-white border-b-2;
 }
 
+.matchStatusNav a {
+  padding: 0.75rem;
+}
+
 .active {
-  @apply text-blue border-b-2 p-3;
+  @apply text-blue border-b-2 p-3 bg-black;
 }
 
 .matchTypes {
@@ -11,5 +15,29 @@
 }
 
 .matchType {
-  @apply mr-3 hover:bg-black p-3 rounded-lg;
+  @apply mr-3 hover:bg-black p-3;
+}
+
+.loader {
+  @apply relative grid place-items-center w-20 h-20 m-auto;
+}
+
+.loader span {
+  @apply absolute border-4 border-solid border-blue rounded-full;
+  animation: ripple 1.8s ease-out infinite;
+}
+.loader span:nth-child(2) {
+  animation-delay: -0.6s;
+}
+@keyframes ripple {
+  from {
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  to {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

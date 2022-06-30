@@ -7,10 +7,30 @@ function MatchCard({ match }) {
   let awayTeam = match?.awayTeamName;
   let homeTeam = match?.homeTeamName;
   let date = changeDateFormat(match.matchdate);
+
+  const calculateProbablity = (percentage) => {
+    if (percentage === "") return false;
+    else {
+      return `${percentage}`;
+    }
+  };
+
+  let homeTeamWinProbablity = calculateProbablity(
+    match.teamsWinProbability.homeTeamPercentage
+  );
+  let awayTeamWinProbablity = calculateProbablity(
+    match.teamsWinProbability.awayTeamPercentage
+  );
+
   return (
     <div className="matchCard">
-      <div className="text-sm p-2"> {match.venue} &#9971; </div>
-      <div className="bg-black p-3 rounded text-center space-x-6">
+      <div className="text-sm p-2">
+        {match.venue} &#9971;
+        <span className="uppercase text-xs float-right">
+          {match.matchStatus}
+        </span>
+      </div>
+      <div className="flag">
         <span>
           {getFlagEmoji(homeTeam.substring(0, homeTeam.length - 1))} {homeTeam}
         </span>
@@ -19,24 +39,35 @@ function MatchCard({ match }) {
           {getFlagEmoji(awayTeam.substring(0, awayTeam.length - 1))} {awayTeam}
         </span>
       </div>
-      <div className="matchDate">{date}</div>
-      <div className="relative">Win Percentage</div>
-      <div className="mr-7">
-        <ProgressBar
-          className="w-10 absolute top-0"
-          win={match?.teamsWinProbability?.homeTeamPercentage}
-          lose={match?.teamsWinProbability?.awayTeamPercentage}
-          height={7}
-        />
-        <span className="text-xs text-left ml-2">
-          {homeTeam}
-          {match?.teamsWinProbability?.homeTeamPercentage}%
-        </span>
-        <span className="text-xs float-right">
-          {awayTeam}
-          {match?.teamsWinProbability?.awayTeamPercentage}%
-        </span>
+      <div className="matchDate">
+        {date === "Invalid date" ? match.matchdate : date}
       </div>
+      {match.matchStatus === "completed" ? (
+        <div className="text-center bg-brown rounded-lg p-1">
+          {match.matchResult}
+        </div>
+      ) : homeTeamWinProbablity ? (
+        <>
+          <div className="relative ml-2">Win Percentage</div>
+          <div className="mr-7">
+            <ProgressBar
+              className="cardProgessBar"
+              homeProgress={homeTeamWinProbablity}
+              awayProgress={awayTeamWinProbablity}
+            />
+            <span className="homeTeamProb">
+              {homeTeam}
+              {homeTeamWinProbablity}%
+            </span>
+            <span className="awayTeamProb">
+              {awayTeam}
+              {awayTeamWinProbablity}%
+            </span>
+          </div>
+        </>
+      ) : (
+        <span>Win Projections to be updated soon</span>
+      )}
     </div>
   );
 }

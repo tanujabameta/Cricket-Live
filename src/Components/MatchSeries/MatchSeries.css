@@ -5,3 +5,11 @@
 .league {
   @apply bg-red p-1.5 mr-2 rounded;
 }
+
+.matchDataCard {
+  @apply flex overflow-x-scroll;
+}
+
+.matchDataCard::-webkit-scrollbar {
+  @apply hidden;
+}

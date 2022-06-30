@@ -10,6 +10,7 @@ export const GET_CRICKET_MATCHES = gql`
       seriesAvailable
       matches {
         matchStatus
+        matchResult
         venue
         matchType
         matchdate

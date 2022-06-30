@@ -13,11 +13,11 @@ function App() {
             <Route path="international" />
             <Route path="domestic" />
           </Route>
-          <Route path="/live-matches" element={<CricketApp />}>
+          <Route path="live-matches" element={<CricketApp />}>
             <Route path="international" />
             <Route path="domestic" />
           </Route>
-          <Route path="/results" element={<CricketApp />}>
+          <Route path="results" element={<CricketApp />}>
             <Route path="international" />
             <Route path="domestic" />
           </Route>

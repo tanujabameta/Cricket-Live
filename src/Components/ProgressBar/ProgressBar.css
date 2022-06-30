@@ -1,0 +1,11 @@
+.progressBar {
+  @apply flex h-2 w-full rounded m-2;
+}
+
+.homeProgress {
+  @apply h-full bg-green rounded-l text-left;
+}
+
+.awayProgress {
+  @apply h-full bg-red rounded-r text-right;
+}

@@ -1,36 +1,13 @@
 import React from "react";
+import "./ProgressBar.css";
 
-const Progress_bar = ({ win, lose, height }) => {
-  const Parentdiv = {
-    height: height,
-    width: "100%",
-    backgroundColor: "white",
-    borderRadius: 40,
-    margin: 10,
-  };
-
-  const Childdiv = {
-    height: "100%",
-    width: `${win}%`,
-    backgroundColor: "green",
-    borderRadius: 40,
-    textAlign: "left",
-  };
-
-  const loseChile = {
-    height: "100%",
-    width: `${lose}%`,
-    backgroundColor: "red",
-    borderRadius: 40,
-    textAlign: "right",
-  };
-
+const ProgressBar = ({ homeProgress, awayProgress }) => {
   return (
-    <div style={Parentdiv}>
-      <div style={Childdiv} />
-      <div style={loseChile} />
+    <div className="progressBar">
+      <div className="homeProgress" style={{ width: `${homeProgress}%` }} />
+      <div className="awayProgress" style={{ width: `${awayProgress}%` }} />
     </div>
   );
 };
 
-export default Progress_bar;
+export default ProgressBar;
